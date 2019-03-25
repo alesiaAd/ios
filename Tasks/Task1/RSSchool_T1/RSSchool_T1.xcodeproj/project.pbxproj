@@ -14,7 +14,7 @@
 		BDBA866F2241A12700AFC095 /* Pangrams.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBA866E2241A12700AFC095 /* Pangrams.m */; };
 		BDBA86722241A22400AFC095 /* Pangrams_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBA86712241A22400AFC095 /* Pangrams_Test.m */; };
 		BDBA86742241A6C500AFC095 /* Pangrams.h in Sources */ = {isa = PBXBuildFile; fileRef = BDBA866D2241A12700AFC095 /* Pangrams.h */; };
-		BDBA86792241AAD200AFC095 /* Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBA86782241AAD200AFC095 /* Encryption.m */; };
+		BDBA86792241AAD200AFC095 /* Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBA86782241AAD200AFC095 /* Encryption.m */; settings = {COMPILER_FLAGS = "-fno-objc-arc"; }; };
 		BDBA867D2241AAFA00AFC095 /* Encryption_Test.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBA867C2241AAFA00AFC095 /* Encryption_Test.m */; };
 		BDBA867E2241AC0B00AFC095 /* Encryption.h in Sources */ = {isa = PBXBuildFile; fileRef = BDBA86772241AAD200AFC095 /* Encryption.h */; };
 		BDBA867F2241AC1600AFC095 /* Encryption.m in Sources */ = {isa = PBXBuildFile; fileRef = BDBA86782241AAD200AFC095 /* Encryption.m */; };
@@ -489,6 +489,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RSSchool_T1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -505,6 +506,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RSSchool_T1/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -521,6 +523,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RSSchool_T1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -539,6 +542,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				BUNDLE_LOADER = "$(TEST_HOST)";
+				CLANG_ENABLE_OBJC_ARC = NO;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = RSSchool_T1Tests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (

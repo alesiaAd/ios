@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Bucket
+   type = "1"
+   version = "2.0">
+   <Breakpoints>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "No"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "RSSchool_T1/Exercises/3/Pangrams.m"
+            timestampString = "575150688.960413"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "12"
+            endingLineNumber = "12"
+            landmarkName = "-pangrams:"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Pangrams pangrams:]"
+                  moduleName = "RSSchool_T1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alesia/Desktop/ios/Tasks/Task1/RSSchool_T1/RSSchool_T1/Exercises/3/Pangrams.m"
+                  timestampString = "574878668.360599"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "260">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Pangrams pangrams:]"
+                  moduleName = "RSSchool_T1"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alesia/Desktop/ios/Tasks/Task1/RSSchool_T1/RSSchool_T1/Exercises/3/Pangrams.m"
+                  timestampString = "574878668.363426"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "309">
+               </Location>
+               <Location
+                  shouldBeEnabled = "No"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[Pangrams pangrams:]"
+                  moduleName = "RSSchool_T1Tests"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/alesia/Desktop/ios/Tasks/Task1/RSSchool_T1/RSSchool_T1/Exercises/3/Pangrams.m"
+                  timestampString = "574878669.28162"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "12"
+                  endingLineNumber = "12"
+                  offsetFromSymbolStart = "333">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+   </Breakpoints>
+</Bucket>
