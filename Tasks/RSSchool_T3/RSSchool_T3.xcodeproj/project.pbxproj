@@ -18,6 +18,8 @@
 		E39C256C225B898A00C3BCC1 /* ArrayPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C256B225B898A00C3BCC1 /* ArrayPrint.m */; };
 		E39C256E225B8DAA00C3BCC1 /* ArrayPrintTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C256D225B8DAA00C3BCC1 /* ArrayPrintTests.m */; };
 		E39C2577225CAA7E00C3BCC1 /* DateMachine.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C2576225CAA7E00C3BCC1 /* DateMachine.m */; };
+		F85A638A225DCEC000200609 /* ArrayPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C256B225B898A00C3BCC1 /* ArrayPrint.m */; };
+		F85A638B225DCEC100200609 /* ArrayPrint.m in Sources */ = {isa = PBXBuildFile; fileRef = E39C256B225B898A00C3BCC1 /* ArrayPrint.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -312,6 +314,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E382156F225B533E00E3B12B /* FullBinaryTreesTests.m in Sources */,
+				F85A638A225DCEC000200609 /* ArrayPrint.m in Sources */,
 				E39C256E225B8DAA00C3BCC1 /* ArrayPrintTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E382157A225B533E00E3B12B /* DateMachineTests.m in Sources */,
+				F85A638B225DCEC100200609 /* ArrayPrint.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -470,6 +474,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42K4QGQ7K4;
 				INFOPLIST_FILE = RSSchool_T3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -487,6 +492,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 42K4QGQ7K4;
 				INFOPLIST_FILE = RSSchool_T3/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
