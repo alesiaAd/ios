@@ -9,10 +9,13 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-  self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
+  self.window = [[[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]] autorelease];
   [self.window setRootViewController:[DateMachine new]];
   self.window.backgroundColor = [UIColor whiteColor];
   [self.window makeKeyAndVisible];
+    DateMachine *vc = [[DateMachine alloc] init];
+    [_window setRootViewController:vc];
+    [vc release];
   return YES;
 }
 
