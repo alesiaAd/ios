@@ -7,31 +7,33 @@
 //
 
 #import "ViewController.h"
+#import "PhoneNumberFormatter.h"
 
 @interface ViewController () <UITextFieldDelegate>
 @property (nonatomic, retain) UITextField *phoneTextField;
 @property (nonatomic, retain) UIImageView *flagView;
-@property (nonatomic, retain) NSDictionary *phoneData;
 @end
 
 @implementation ViewController
 
++ (NSDictionary *)phoneNumberCountry {
+    return @{@"7": @[@"KZ", @"RU"],
+             @"373": @"MD",
+             @"374": @"AM",
+             @"375": @"BY",
+             @"380": @"UA",
+             @"992": @"TJ",
+             @"993": @"TM",
+             @"994": @"AZ",
+             @"996": @"KG",
+             @"998": @"UZ"
+             };
+}
+
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    self.phoneData = @{@"7": @{@"country": @[@"KZ", @"RU"], @"phone number length": @(10)},
-                       @"373": @{@"country": @"MD", @"phone number length": @(8)},
-                       @"374": @{@"country": @"AM", @"phone number length": @(8)},
-                       @"375": @{@"country": @"BY", @"phone number length": @(9)},
-                       @"380": @{@"country": @"UA", @"phone number length": @(9)},
-                       @"992": @{@"country": @"TJ", @"phone number length": @(9)},
-                       @"993": @{@"country": @"TM", @"phone number length": @(8)},
-                       @"994": @{@"country": @"AZ", @"phone number length": @(9)},
-                       @"996": @{@"country": @"KG", @"phone number length": @(9)},
-                       @"998": @{@"country": @"UZ", @"phone number length": @(9)},
-                       };
-    
-    self.phoneTextField = [[UITextField alloc] initWithFrame:CGRectMake(0, 200, 300, 50)];
+    self.phoneTextField = [[[UITextField alloc] initWithFrame:CGRectMake(0, 200, 300, 50)] autorelease];
     self.phoneTextField.delegate = self;
     CGPoint newCenter = self.phoneTextField.center;
     newCenter.x = self.view.center.x;
@@ -42,10 +44,11 @@
     self.phoneTextField.keyboardType = UIKeyboardTypePhonePad;
     
     UIView *leftView = [[UIView alloc] initWithFrame:CGRectMake(0, 0, 60, 40)];
-    self.flagView = [[UIImageView alloc] initWithFrame:CGRectMake(20, 0, 40, 40)];
-    [leftView addSubview:self.flagView];
+    self.flagView = [[[UIImageView alloc] initWithFrame:CGRectMake(20, 0, 40, 40)] autorelease];
+    [leftView addSubview:self.flagView];    
     self.phoneTextField.leftView = leftView;
     self.phoneTextField.leftViewMode = UITextFieldViewModeAlways;
+    [leftView release];
     
     [self.view addSubview:self.phoneTextField];
     
@@ -54,31 +57,48 @@
 // TextFieldDelegate
 
 - (BOOL)textField:(UITextField *)textField shouldChangeCharactersInRange:(NSRange)range replacementString:(NSString *)string {
-    NSLog(@"string - %@", string);
     NSString * stringToCheck = [textField.text stringByReplacingCharactersInRange:range withString:string];
-    NSString *newString = [stringToCheck substringFromIndex:1];
+    NSString *pureNumbers = [[stringToCheck componentsSeparatedByCharactersInSet:[[NSCharacterSet decimalDigitCharacterSet] invertedSet]] componentsJoinedByString:@""];
     if(stringToCheck.length == 1) {
-        if(![stringToCheck isEqualToString:@"+"]) {
-            if([self checkIsNumber:stringToCheck]) {
-                textField.text = @"+";
-            }
-            else {
-                return NO;
-            }
-        }
-    }
-    else {
-        if(![self checkIsNumber:string]) {
-            return NO;
-        }
-        else if([newString isEqualToString:@"7"]) {
+        if([stringToCheck isEqualToString:@"+"]) {
             return YES;
         }
+    }
+    //to delete "+"
+    if(stringToCheck.length ==0) {
+        textField.text = @"";
+        return NO;
+    }
+    //to delete ")"
+    if(range.length > 0 && [[stringToCheck substringFromIndex:stringToCheck.length - 1] isEqualToString:@")"]) {
+        textField.text = [stringToCheck substringToIndex:stringToCheck.length - 2];
+        return NO;
+    }
+    PhoneNumber *phoneNumber = [PhoneNumberFormatter formatPhoneNumber:stringToCheck];
+    if(pureNumbers.length > 12 || (phoneNumber.code && (((int)pureNumbers.length - (int)phoneNumber.code.length) > (int)phoneNumber.phoneNumberLength))) {
+        return NO;
+    }
+    if(![self checkIsNumber:string]) {
+        return NO;
+    }
+    textField.text = phoneNumber.formattedValue;
+    if([pureNumbers isEqualToString:@"7"]) {
+        self.flagView.image = nil;
+        return NO;
+    }
+    else if([pureNumbers hasPrefix:@"77"]) {
+        [self setImageFromCode:@"77"];
+        return NO;
+    }
+    else {
+        if(phoneNumber.code) {
+           [self setImageFromCode:phoneNumber.code];
+        }
         else {
-            [self setImageFromCode:newString];
+            self.flagView.image = nil;
         }
     }
-    return YES;
+    return NO;
 }
 
 -(BOOL)checkIsNumber:(NSString *)string {
@@ -90,45 +110,26 @@
     return NO;
 }
 
--(void)setImageFromCode:(NSString *) string {
-    NSDictionary *data = [self.phoneData valueForKey:string];
-    if([string hasPrefix:@"7"]) {
-        data = [self.phoneData valueForKey:@"7"];
-    }
-    NSString *country = [[NSString alloc] init];
-    if(data) {
-        if([string hasPrefix:@"7"]) {
-            if([string hasPrefix:@"77"]) {
-              country = [data valueForKey:@"country"][0];
-            }
-            else {
-                country = [data valueForKey:@"country"][1];
-            }
+-(void)setImageFromCode:(NSString *) code {
+    NSDictionary *phoneNumberDictionary = [ViewController phoneNumberCountry];
+    if([code hasPrefix:@"7"]) {
+        if([code hasPrefix:@"77"]) {
+            [self.flagView setImage:[UIImage imageNamed:[@"flag_" stringByAppendingString:[phoneNumberDictionary valueForKey:@"7"][0]]]];
         }
         else {
-            country = [data valueForKey:@"country"];
-            //return [data valueForKey:@"phone number length"];
+            [self.flagView setImage:[UIImage imageNamed:[@"flag_" stringByAppendingString:[phoneNumberDictionary valueForKey:code][1]]]];
         }
-        [self.flagView setImage:[UIImage imageNamed:[@"flag_" stringByAppendingString:country]]];
     }
     else {
-        //self.flagView.image = nil;
+        [self.flagView setImage:[UIImage imageNamed:[@"flag_" stringByAppendingString:[phoneNumberDictionary valueForKey:code]]]];
     }
-    //return nil;
 }
 
--(NSString *)formatPhoneNumberWithLength8:(NSString *)string withCode:(NSString *)code{
-    NSMutableString *formattedPhoneNumber = [string mutableCopy];
-    if(string.length == code.length + 1) {
-        formattedPhoneNumber = [NSMutableString stringWithFormat:@"%@ (%hu", code, [string characterAtIndex:string.length - 1]];
-    }
-    else if(string.length == code.length + 4) {
-        [formattedPhoneNumber appendString:@") "];
-    }
-    else if(string.length == code.length + 10) {
-        [formattedPhoneNumber insertString:@"-" atIndex:string.length - 2];
-    }
-    return formattedPhoneNumber;
+-(void)dealloc {
+    self.phoneTextField = nil;
+    self.flagView = nil;
+    [super dealloc];
 }
+
 
 @end

@@ -8,16 +8,15 @@
 
 #import <Foundation/Foundation.h>
 
-NS_ASSUME_NONNULL_BEGIN
-
 @interface PhoneNumber: NSObject
 @property (nonatomic, retain) NSString *code;
-@property (nonatomic, retain) NSString *rowValue;
+@property (nonatomic, retain) NSString *rawValue;
 @property (nonatomic, retain) NSString *formattedValue;
+@property (nonatomic, assign) NSInteger phoneNumberLength;
 @end
 
 @interface PhoneNumberFormatter : NSObject
-+(PhoneNumber *)formatPhoneNumber:(NSString *)rowValue;
-@end
 
-NS_ASSUME_NONNULL_END
++(PhoneNumber *)formatPhoneNumber:(NSString *)rowValue;
+
+@end

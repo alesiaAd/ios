@@ -14,7 +14,18 @@
 		BD47B5622268F8120060BDF3 /* PhoneNumber.pdf in Resources */ = {isa = PBXBuildFile; fileRef = BD47B5612268F8120060BDF3 /* PhoneNumber.pdf */; };
 		F830A86B2269BC9B00D256CE /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F830A86A2269BC9B00D256CE /* ViewController.m */; };
 		F830A86E226B416400D256CE /* PhoneNumberFormatter.m in Sources */ = {isa = PBXBuildFile; fileRef = F830A86D226B416400D256CE /* PhoneNumberFormatter.m */; };
+		F830A876226B484800D256CE /* RSSchool_T4Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = F830A875226B484800D256CE /* RSSchool_T4Tests.m */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		F830A878226B484800D256CE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BD47B5462268ED9F0060BDF3 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = BD47B54D2268ED9F0060BDF3;
+			remoteInfo = RSSchool_T4;
+		};
+/* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
 		BD47B54E2268ED9F0060BDF3 /* RSSchool_T4.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RSSchool_T4.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -29,10 +40,20 @@
 		F830A86A2269BC9B00D256CE /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
 		F830A86C226B416400D256CE /* PhoneNumberFormatter.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PhoneNumberFormatter.h; sourceTree = "<group>"; };
 		F830A86D226B416400D256CE /* PhoneNumberFormatter.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = PhoneNumberFormatter.m; sourceTree = "<group>"; };
+		F830A873226B484800D256CE /* RSSchool_T4Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RSSchool_T4Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		F830A875226B484800D256CE /* RSSchool_T4Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = RSSchool_T4Tests.m; sourceTree = "<group>"; };
+		F830A877226B484800D256CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
 		BD47B54B2268ED9F0060BDF3 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F830A870226B484800D256CE /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -46,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				BD47B5502268ED9F0060BDF3 /* RSSchool_T4 */,
+				F830A874226B484800D256CE /* RSSchool_T4Tests */,
 				BD47B54F2268ED9F0060BDF3 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -54,6 +76,7 @@
 			isa = PBXGroup;
 			children = (
 				BD47B54E2268ED9F0060BDF3 /* RSSchool_T4.app */,
+				F830A873226B484800D256CE /* RSSchool_T4Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -76,6 +99,15 @@
 			path = RSSchool_T4;
 			sourceTree = "<group>";
 		};
+		F830A874226B484800D256CE /* RSSchool_T4Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F830A875226B484800D256CE /* RSSchool_T4Tests.m */,
+				F830A877226B484800D256CE /* Info.plist */,
+			);
+			path = RSSchool_T4Tests;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -96,6 +128,24 @@
 			productReference = BD47B54E2268ED9F0060BDF3 /* RSSchool_T4.app */;
 			productType = "com.apple.product-type.application";
 		};
+		F830A872226B484800D256CE /* RSSchool_T4Tests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F830A87C226B484800D256CE /* Build configuration list for PBXNativeTarget "RSSchool_T4Tests" */;
+			buildPhases = (
+				F830A86F226B484800D256CE /* Sources */,
+				F830A870226B484800D256CE /* Frameworks */,
+				F830A871226B484800D256CE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				F830A879226B484800D256CE /* PBXTargetDependency */,
+			);
+			name = RSSchool_T4Tests;
+			productName = RSSchool_T4Tests;
+			productReference = F830A873226B484800D256CE /* RSSchool_T4Tests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -107,6 +157,10 @@
 				TargetAttributes = {
 					BD47B54D2268ED9F0060BDF3 = {
 						CreatedOnToolsVersion = 10.1;
+					};
+					F830A872226B484800D256CE = {
+						CreatedOnToolsVersion = 10.1;
+						TestTargetID = BD47B54D2268ED9F0060BDF3;
 					};
 				};
 			};
@@ -124,6 +178,7 @@
 			projectRoot = "";
 			targets = (
 				BD47B54D2268ED9F0060BDF3 /* RSSchool_T4 */,
+				F830A872226B484800D256CE /* RSSchool_T4Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -136,6 +191,13 @@
 				BD47B5552268EDA10060BDF3 /* Assets.xcassets in Resources */,
 				BD47B5622268F8120060BDF3 /* PhoneNumber.pdf in Resources */,
 				BD47B5582268EDA10060BDF3 /* LaunchScreen.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F830A871226B484800D256CE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -153,7 +215,23 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		F830A86F226B484800D256CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F830A876226B484800D256CE /* RSSchool_T4Tests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		F830A879226B484800D256CE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = BD47B54D2268ED9F0060BDF3 /* RSSchool_T4 */;
+			targetProxy = F830A878226B484800D256CE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		BD47B5562268EDA10060BDF3 /* LaunchScreen.storyboard */ = {
@@ -313,6 +391,42 @@
 			};
 			name = Release;
 		};
+		F830A87A226B484800D256CE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RSSchool_T4Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alesia.RSSchool-T4Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSSchool_T4.app/RSSchool_T4";
+			};
+			name = Debug;
+		};
+		F830A87B226B484800D256CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				INFOPLIST_FILE = RSSchool_T4Tests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alesia.RSSchool-T4Tests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/RSSchool_T4.app/RSSchool_T4";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -330,6 +444,15 @@
 			buildConfigurations = (
 				BD47B55F2268EDA10060BDF3 /* Debug */,
 				BD47B5602268EDA10060BDF3 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		F830A87C226B484800D256CE /* Build configuration list for PBXNativeTarget "RSSchool_T4Tests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				F830A87A226B484800D256CE /* Debug */,
+				F830A87B226B484800D256CE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
